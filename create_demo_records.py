@@ -8,9 +8,9 @@ from news.models import Column,Article
 
 def main():
 	columns_url = [
-		('sport_news','sports'),
-		('social_news','social'),
-		('sicence_news','science'),
+		('电子产品','dianzi'),
+		('日用品','social'),
+		('辣鸡玩意','lj'),
 	]
 	for column_name, url in columns_url:
 		c = Column.objects.get_or_create(name=column_name,slug=url)[0]
