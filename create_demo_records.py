@@ -18,7 +18,7 @@ def main():
 			article = Article.objects.get_or_create(
 				title='{}_{}'.format(column_name,i),
 				slug='article_{}'.format(i),
-				content='News_content:  {}  {}'.format(column_name,i)
+				content='内容:  {}  {}'.format(column_name,i)
 			)[0]
 			article.column.add(c)
 
