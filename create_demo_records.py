@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-#@author  :lrl
-#@date  :2018-11-20
-
 
 from minicms.wsgi import *
 from news.models import Column,Article
