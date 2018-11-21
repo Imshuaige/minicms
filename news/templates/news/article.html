@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block title %}
+{{ article.title }}
+{% endblock title %}
+
+
+{% block content %}
+<h2>文章标题： {{ article.title }}</h2>
+{% autoescape off %}
+{{article.content}}
+{% endautoescape %}
+{% endblock content %}
+</body>
+</html>

@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
+#@author  :lrl
+#@date  :2018-11-20
+
 
 from minicms.wsgi import *
 from news.models import Column,Article
 
 def main():
 	columns_url = [
-		('电子产品','dianzi'),
-		('日用品','social'),
-		('辣鸡玩意','lj'),
+		('服装商品','clothing'),
+		('日用品','daily'),
+		('电子产品','electronic'),
 	]
 	for column_name, url in columns_url:
 		c = Column.objects.get_or_create(name=column_name,slug=url)[0]
