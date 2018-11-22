@@ -13,7 +13,7 @@ class Column(models.Model):
 	name = models.CharField('类别名字',max_length=256)
 	slug = models.CharField('类别网址',max_length=256,unique=True)
 	intro = models.TextField('类别简介',default='')
-	nav_dispaly = models.BooleanField('导航显示',default=False)
+	nav_display = models.BooleanField('导航显示',default=False)
 	home_display = models.BooleanField('首页显示',default=False)
 
 	def __str__(self):
