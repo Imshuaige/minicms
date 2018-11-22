@@ -15,6 +15,7 @@
       <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
       <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <style type="text/css">
     body {
         padding-top: 60px;
@@ -32,19 +33,22 @@
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div>
       <div>
-         <button type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+         <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
          <span>隐藏一下</span>
          <span></span>
          <span></span>
          <span></span>
          </button> 
-         <span><a href="/">皮皮市场</a></span>
+         <strong><a href="/">皮皮市场主页</a></strong>
       </div>
 
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="collapse in" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           {% for column in nav_display_columns %}
               <li><a href="{{ column.get_absolute_url }}">{{ column.name }}</a></li>
+          {% endfor %}
+          {% for article in column.article_set.all %}
+              <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
           {% endfor %}
         </ul>
       </div>
